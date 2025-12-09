@@ -2,6 +2,8 @@
 
 Training Framework Environment for Reinforcement Learning
 
+<img width="1919" height="1079" alt="2025-12-09_13-52" src="https://github.com/user-attachments/assets/8fd6d491-6bbe-49dc-b9c3-0ab437e04810" />
+
 ## Roadmap
 
 - [ ] Step 1: Make the most basic possible game and RL agent to traverse a basic maze
