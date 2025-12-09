@@ -86,13 +86,25 @@ while running:
 
     player.update(dt, keys)
 
+    background = ColorScheme.grey_background
+
+    if game_state.get_state() == GameState.WON:
+        background = ColorScheme.goal_green
+
+    if game_state.get_state() == GameState.LOST:
+        background = ColorScheme.player_red
+
     # fill the screen with a color to wipe away anything from last frame
-    screen.fill(ColorScheme.grey_background)
+    screen.fill(background)
 
     all_sprites.draw(screen)
 
     # flip() the display to put your work on screen
     pygame.display.flip()
+
+    if pygame.sprite.collide_circle(player, goal):
+        game_state.set_won()
+
 
     clock.tick(60)  # limits FPS to 60
 
