@@ -19,3 +19,7 @@ We suggest that you use `uv` for this project
 #### Install Quick Start
 
 TODO
+
+## Thoughts & Insights
+
+- We want to randomize the map so the agent doesn't just memorize the map
