@@ -4,19 +4,24 @@ import pygame
 class ColorScheme:
     grey_background = pygame.Color("#212F3C")
     player_red = pygame.Color("#E3301C")
+    goal_green = pygame.Color("#2ECC71")
 
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((1920, 1080))
 clock = pygame.time.Clock()
 running = True
 dt = 0
 
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+WIDTH = screen.get_width()
+HEIGHT = screen.get_height()
+
+player_pos = pygame.Vector2(50, 50)
+
+goal_pos = ()
 
 while running:
-
     # poll for events
     # pygame.QUIT event means the user clicked X to close your window
     for event in pygame.event.get():
@@ -25,6 +30,12 @@ while running:
 
     # fill the screen with a color to wipe away anything from last frame
     screen.fill(ColorScheme.grey_background)
+
+    pygame.draw.rect(
+        screen,
+        ColorScheme.goal_green,
+        pygame.Rect(WIDTH - 90, HEIGHT - 90, 80, 80),
+    )
 
     pygame.draw.circle(screen, ColorScheme.player_red, player_pos, 40)
 
